@@ -3,8 +3,15 @@ import { createApp } from 'vue'
 /* FontAwesome */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronDown, faFileArrowUp, faTimes, faPlus, faUser } from '@fortawesome/pro-regular-svg-icons'
-library.add(faChevronDown, faFileArrowUp, faTimes, faPlus, faUser)
+import {
+  faChevronDown, faFileArrowUp, faTimes, faPlus, faUser,
+  faCircleCheck, faCircleXmark, faSpinnerThird
+} from '@fortawesome/pro-regular-svg-icons'
+
+library.add(
+  faChevronDown, faFileArrowUp, faTimes, faPlus, faUser,
+  faCircleCheck, faCircleXmark, faSpinnerThird
+)
 
 /* Blobby */
 import BInputGroup from '@compromis/blobby/components/inputs/BInputGroup.vue'

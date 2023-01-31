@@ -32,7 +32,7 @@ const expenses = computed({
 })
 
 const addExpense = () => {
-  expenses.value.push({ id: uniqueId(), type: null, amount: 0, people: 1, kms: 0 })
+  expenses.value.push({ id: uniqueId(), type: null, amount: 0, people: 1, kms: 0, receipt: null })
 }
 
 const deleteExpense = (id) => {
@@ -115,7 +115,7 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
             </div>
           </td>
           <td class="expense-receipt">
-            <upload-file />
+            <upload-file v-model="expense.receipt" :name="`file-${expense.id}`" label="Arxiu" />
           </td>
           <td class="expense-extra">
             <div class="expense-tip" v-if="expense.type?.tip">{{ expense.type.tip }}</div>
@@ -130,7 +130,7 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
       <tfoot>
         <tr class="expenses-total">
           <th colspan="2">Total</th>
-          <th class="text-right" style="color: #7fc347;">{{ formatCurrency(totalExpenses) }}</th>
+          <th class="text-right" style="color: var(--green);">{{ formatCurrency(totalExpenses) }}</th>
           <th colspan="3"></th>
         </tr>
       </tfoot>
@@ -235,6 +235,7 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
 
   &-receipt {
     padding: calc(var(--expense-padding) / 2) !important;
+    vertical-align: middle !important;
 
     :deep(.button) {
       border-width: 1px;
@@ -297,7 +298,7 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
       opacity: .75;
 
       &:hover {
-        color: #ef404d;
+        color: var(--red);
       }
     }
   }
@@ -318,10 +319,6 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
     &:focus {
       background: var(--gray-100);
       outline: 0;
-    }
-
-    option:disabled {
-      background: red;
     }
   }
 

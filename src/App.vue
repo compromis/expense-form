@@ -1,5 +1,6 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
+import API from './api.js'
 import FormHeader from './components/FormHeader.vue'
 import ExpenseForm from './components/ExpenseForm.vue'
 
@@ -20,7 +21,10 @@ const form = reactive({
   IBAN: ''
 })
 
-const submit = () => {
+const submitting = ref(false)
+const submitted = ref(false)
+const submit = async () => {
+  const response = await API.submit(form)
   alert('Submt')
 }
 </script>
@@ -176,6 +180,11 @@ const submit = () => {
 </template>
 
 <style lang="scss">
+:root {
+  --green: #7fc347;
+  --red: #ef404d;
+}
+
 .container {
   max-width: 1100px;
 }
