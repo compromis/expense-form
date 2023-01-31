@@ -1,11 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
 import FormHeader from './components/FormHeader.vue'
-import BInputGroup from '@compromis/blobby/components/inputs/BInputGroup.vue'
-import BInput from '@compromis/blobby/components/inputs/BInput.vue'
-import BSelect from '@compromis/blobby/components/inputs/BSelect.vue'
-import BField from '@compromis/blobby/components/inputs/BField.vue'
-import BButton from '@compromis/blobby/components/button/BButton.vue'
 import ExpenseForm from './components/ExpenseForm.vue'
 
 const form = reactive({
@@ -136,12 +131,27 @@ const submit = () => {
           v-model="form.where"
           required
         />
-        <b-field span="1" label="Data">
-          Hello
-        </b-field>
-        <b-field span="1" label="Dies">
-          Hello
-        </b-field>
+        <b-input
+          variant="float"
+          type="date"
+          label="Data"
+          name="date"
+          span="1"
+          label-on-top
+          v-model="form.date"
+          required
+        />
+        <b-input
+          variant="float"
+          type="number"
+          label="Dies"
+          name="days"
+          span="1"
+          v-model="form.days"
+          min="1"
+          step="1"
+          required
+        />
       </b-input-group>
 
       <expense-form v-model="form.expenses" class="mt-5" />
@@ -161,18 +171,26 @@ const submit = () => {
         Envia formulari
       </b-button>
     </form>
-    <pre>
-      {{  form  }}
-    </pre>
+    <b-footer class="expense-footer" />
   </main>
 </template>
 
 <style lang="scss">
 .container {
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .input-card .card-content {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
+}
+
+.field-input {
+  font-size: 1.25rem;
+  border: 0;
+  padding: 0;
+}
+
+.expense-footer {
+  margin-top: 3rem;
 }
 </style>
