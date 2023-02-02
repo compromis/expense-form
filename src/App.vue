@@ -24,8 +24,15 @@ const form = reactive({
 const submitting = ref(false)
 const submitted = ref(false)
 const submit = async () => {
-  const response = await API.submit(form)
-  alert('Submt')
+  submitting.value = true
+  try {
+    const response = await API.submit(form)
+    submitted.value = response
+  } catch (error) {
+    alert('S\'ha produit un error enviant el full de liquidació. Torna a intentar-ho més tard o contacta amb finances@compromis.net')
+  } finally {
+    submitting.value = false
+  }
 }
 </script>
 
@@ -33,7 +40,26 @@ const submit = async () => {
   <main class="container">
     <form-header />
 
-    <form @submit.prevent="submit">
+    <div v-if="submitted">
+      <b-card>
+        <b-card-section>
+          <h2 class="mb-4 text-3xl">Rebut!</h2>
+          <p class="text-lg">
+            Hem rebut el teu full de liquidació correctament. El Departament de Finances t'ingresarà al teu compte
+            el més eviat possible.
+          </p>
+          <p class="text-lg">
+            Si tens cap dubte, pots contactar amb <a href="mailto:finances@compromis.net">finances@compromis.net</a>.
+          </p>
+          {{  submitted }}
+          <p>
+            <a :href="`https://compromis.net/espai/tracking/${submitted.id}/${submitted.expense.ref}`">Seguiment del pagament</a>
+          </p>
+          <b-button outline href="/">Presentar altra fulla de liquidació</b-button>
+        </b-card-section>
+      </b-card>
+    </div>
+    <form v-else @submit.prevent="submit">
       <b-input-group>
         <b-select
           variant="float"
@@ -171,8 +197,14 @@ const submit = async () => {
         />
       </b-input-group>
 
-      <b-button variant="primary" size="xl" shadow type="submit" class="mt-5">
-        Envia formulari
+      <b-button variant="primary" size="xl" shadow type="submit" class="mt-5" :disabled="submitting">
+        <span v-if="submitting">
+          <font-awesome-icon icon="fa-regular fa-spinner-third" spin />
+          Enviant
+        </span>
+        <span v-else>
+          Envia formulari
+        </span>
       </b-button>
     </form>
     <b-footer class="expense-footer" />

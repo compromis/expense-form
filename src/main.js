@@ -20,6 +20,8 @@ import BSelect from '@compromis/blobby/components/inputs/BSelect.vue'
 import BField from '@compromis/blobby/components/inputs/BField.vue'
 import BButton from '@compromis/blobby/components/button/BButton.vue'
 import BFooter from '@compromis/blobby/components/footer/BFooter.vue'
+import BCard from '@compromis/blobby/components/card/BCard.vue'
+import BCardSection from '@compromis/blobby/components/card/BCardSection.vue'
 import '@compromis/blobby/scss/blobby.scss'
 
 /* App */
@@ -32,6 +34,8 @@ app.component('b-select', BSelect)
 app.component('b-field', BField)
 app.component('b-button', BButton)
 app.component('b-footer', BFooter)
+app.component('b-card', BCard)
+app.component('b-card-section', BCardSection)
 app.component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')

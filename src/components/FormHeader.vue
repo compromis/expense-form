@@ -4,7 +4,7 @@ import CompromisLogo from '@compromis/blobby/components/logos/CompromisLogo.vue'
 
 <template>
   <header class="header">
-    <compromis-logo class="logo" />
+    <div class="header-logo"><compromis-logo class="logo" />Finances</div>
     <h1 class="text-5xl">Full de liquidació</h1>
   </header>
 </template>
@@ -22,6 +22,14 @@ import CompromisLogo from '@compromis/blobby/components/logos/CompromisLogo.vue'
       color: var(--gray-600);
       margin-top: 2rem;
       font-size: var(--text-xl);
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--gray-700);
+      font-size: 1.25rem;
     }
   }
 </style>

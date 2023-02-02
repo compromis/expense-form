@@ -8,7 +8,7 @@ class API {
   }
 
   submit (data) {
-    return this._call('post', 'submit', data)
+    return this._call('post', 'submit', { entity: data.entity, form: data })
   }
 
   uploadFile (destination, data) {

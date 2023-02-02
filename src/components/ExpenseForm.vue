@@ -91,13 +91,10 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
             </div>
           </td>
           <td class="expense-people">
-            <div v-if="expense.type?.requires_people">
+            <div>
               <label class="visually-hidden">Persones</label>
-              <input type="number" min="1" class="text-right" v-model="expense.people" />
+              <input type="number" min="1" class="text-right" v-model="expense.people" :disabled="!expense.type" />
               <font-awesome-icon icon="fa-regular fa-user" />
-            </div>
-            <div v-else class="text-right no-people">
-              --
             </div>
           </td>
           <td class="expense-amount">
