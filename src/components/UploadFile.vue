@@ -93,7 +93,7 @@ export default {
       this.isSaving = true
       const formData = new FormData()
       formData.append('file', this.selectedFile, this.selectedFile.name)
-      console.log('uploading', formData)
+
       API.uploadFile('expenses', formData)
         .then((response) => {
           this.uploadedFile = response.file
@@ -123,6 +123,15 @@ export default {
 
   &:hover {
     background: var(--gray-50);
+  }
+
+  &:focus-within {
+    outline: 2px var(--primary) solid;
+  }
+  
+  input {
+    width: 1px;
+    padding: 0;
   }
 
   .success {

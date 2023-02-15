@@ -51,9 +51,8 @@ const submit = async () => {
           <p class="text-lg">
             Si tens cap dubte, pots contactar amb <a href="mailto:finances@compromis.net">finances@compromis.net</a>.
           </p>
-          {{  submitted }}
           <p>
-            <a :href="`https://compromis.net/espai/tracking/${submitted.id}/${submitted.expense.ref}`">Seguiment del pagament</a>
+            <a :href="`https://compromis.net/espai/expenses/tracking/${submitted.id}/${submitted.expense.ref}`" target="_blank">Seguiment del pagament</a>
           </p>
           <b-button outline href="/">Presentar altra fulla de liquidació</b-button>
         </b-card-section>
