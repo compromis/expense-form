@@ -1,26 +1,12 @@
 <script setup>
 import { computed } from 'vue'
 import { formatCurrency } from '../helpers/format.js'
+import { types } from '../helpers/types.js'
 import UploadFile from './UploadFile.vue'
 import CurrencyInput from './CurrencyInput.vue'
 
 const props = defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
-
-const types = {
-  BUS: { text: 'Autobús', tip: 'Classe turista' },
-  TRAIN: { text: 'Tren', tip: 'Classe turista' },
-  URBANBUS: { text: 'Bus urbà', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', urban_transport: true },
-  METRO: { text: 'Metro', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', is_vehicle: false, urban_transport: true },
-  TAXI: { text: 'Taxi', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', is_vehicle: false, urban_transport: true },
-  PARKING: { text: 'Aparcament', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', is_vehicle: false, urban_transport: true },
-  HIGHWAY: { text: 'Peatge autopista', tip: 'Màxim 8€/dia' },
-  CAR: { text: 'Vehicle particular', tip: 'Preu a 0,19€/km', per_km: 0.19, is_vehicle: true },
-  BREAKFAST: { text: 'Desdejuni', tip: 'Màxim 3€/persona/dia', requires_people: true },
-  LUNCH: { text: 'Dinar', tip: 'Màxim 10€/persona/dia', requires_people: true },
-  DINNER: { text: 'Sopar', tip: 'Màxim 12€/persona/dia', requires_people: true },
-  LODGING: { text: 'Allotjament', requires_people: true },
-}
 
 const expenses = computed({
   get () {

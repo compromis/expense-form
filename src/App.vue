@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 import API from './api.js'
 import FormHeader from './components/FormHeader.vue'
 import ExpenseForm from './components/ExpenseForm.vue'
+import ExpenseAdvisor from './components/ExpenseAdvisor.vue'
 
 const form = reactive({
   entity: 'Compromís',
@@ -184,6 +185,7 @@ const submit = async () => {
       </b-input-group>
 
       <expense-form v-model="form.expenses" class="mt-5" />
+      <expense-advisor :expenses="form.expenses" :days="form.days" />
 
       <b-input-group title="Compte on ingresar" class="mt-5">
         <b-input
