@@ -11,4 +11,5 @@ export const types = {
   LUNCH: { ref: 'LUNCH', text: 'Dinar', tip: 'Màxim 10€/persona/dia', requires_people: true },
   DINNER: { ref: 'DINNER', text: 'Sopar', tip: 'Màxim 12€/persona/dia', requires_people: true },
   LODGING: { ref: 'LODGING', text: 'Allotjament', requires_people: true },
+  OTHER: { ref: 'OTHER', text: 'Altre' }
 }
