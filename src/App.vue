@@ -69,6 +69,8 @@ const submit = async () => {
           v-model="form.entity"
           required
         >
+          <option>Eleccions Autonòmiques 2023</option>
+          <option>Eleccions Municipals 2023</option>
           <option>Compromís</option>
           <option>Més</option>
           <option>Iniciativa</option>
@@ -79,7 +81,6 @@ const submit = async () => {
           <option>Diputació de València</option>
           <option>Diputació de Castelló</option>
           <option>Diputació de Alacant</option>
-          <option>Eleccions 2023</option>
         </b-select>
       </b-input-group>
       
