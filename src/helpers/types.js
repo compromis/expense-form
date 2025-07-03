@@ -6,7 +6,7 @@ export const types = {
   TAXI: { ref: 'TAXI', text: 'Taxi', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', is_vehicle: false, urban_transport: true },
   PARKING: { ref: 'PARKING', text: 'Aparcament', tip: 'Suma màxima de bus, metro, taxi i aparcament: 8€/dia', is_vehicle: false, urban_transport: true },
   TOLL: { ref: 'TOLL', text: 'Peatge autopista', tip: 'Màxim 8€/dia' },
-  CAR: { ref: 'CAR', text: 'Vehicle particular', tip: 'Preu a 0,19€/km', per_km: 0.19, is_vehicle: true },
+  CAR: { ref: 'CAR', text: 'Vehicle particular', tip: 'Preu a 0,26€/km', per_km: 0.26, is_vehicle: true },
   BREAKFAST: { ref: 'BREAKFAST', text: 'Desdejuni', tip: 'Màxim 3€/persona/dia', requires_people: true },
   LUNCH: { ref: 'LUNCH', text: 'Dinar', tip: 'Màxim 10€/persona/dia', requires_people: true },
   DINNER: { ref: 'DINNER', text: 'Sopar', tip: 'Màxim 12€/persona/dia', requires_people: true },
