@@ -46,16 +46,19 @@ const submit = async () => {
         <b-card-section>
           <h2 class="mb-4 text-3xl">Rebut!</h2>
           <p class="text-lg">
-            Hem rebut el teu full de liquidació correctament. El Departament de Finances t'ingresarà al teu compte
-            el més eviat possible.
+            Hem rebut el teu full de liquidació correctament. El Departament de Finances el processarà i t'ingresarà al teu compte la quantitat especificada
+            el més prompte possible.
           </p>
           <p class="text-lg">
             Si tens cap dubte, pots contactar amb <a href="mailto:finances@compromis.net">finances@compromis.net</a>.
           </p>
-          <p>
+          <p class="text-lg">
+            Pots fer seguiment de l'estat del pagament al següent enllaç:
+          </p>
+          <p class="text-lg">
             <a :href="`https://compromis.net/espai/expenses/tracking/${submitted.id}/${submitted.expense.ref}`" target="_blank">Seguiment del pagament</a>
           </p>
-          <b-button outline href="/">Presentar altra fulla de liquidació</b-button>
+          <b-button outline href="/">Presentar altre full de liquidació</b-button>
         </b-card-section>
       </b-card>
     </div>
