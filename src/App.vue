@@ -151,7 +151,7 @@ const submit = async () => {
         />
         <b-input
           variant="float"
-          label="Motiu de la participació"
+          label="Motiu de la participació (detalla el motiu)"
           name="last_name"
           span="3"
           v-model="form.reason"

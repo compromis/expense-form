@@ -38,6 +38,9 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
 
 <template>
   <b-input-group title="Despeses">
+    <div class="alert alert-warning" role="alert">
+      No es pagarà cap despesa sense que adjunteu un suport documental: tiquet, factura, bitllet...
+    </div>
     <table class="table expenses span-4">
       <thead>
         <tr>
@@ -114,7 +117,7 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
         <tr class="expenses-total">
           <th colspan="2">Total</th>
           <th class="text-right" style="color: var(--green);">{{ formatCurrency(totalExpenses) }}</th>
-          <th colspan="3"></th>
+          <th colspan="3" style="font-size: .85rem">* Després de la revisió el import es pot reduir si has superat algún limit de despesa o no adjuntes justificant corresponent</th>
         </tr>
       </tfoot>
     </table>
