@@ -56,7 +56,7 @@ const submit = async () => {
             Pots fer seguiment de l'estat del pagament al següent enllaç:
           </p>
           <p class="text-lg">
-            <a :href="`https://compromis.net/espai/expenses/tracking/${submitted.id}/${submitted.expense.ref}`" target="_blank">Seguiment del pagament</a>
+            <a :href="`https://espai.compromis.net/expenses/tracking/${submitted.id}/${submitted.expense.ref}`" target="_blank">Seguiment del pagament</a>
           </p>
           <b-button outline href="/">Presentar altre full de liquidació</b-button>
         </b-card-section>
@@ -72,8 +72,7 @@ const submit = async () => {
           v-model="form.entity"
           required
         >
-          <option>Eleccions Autonòmiques 2023</option>
-          <option>Eleccions Municipals 2023</option>
+          <option>Compromís-Front Valencià: Eleccions Generals 2026</option>
           <option>Compromís</option>
           <option>Més</option>
           <option>Iniciativa</option>
