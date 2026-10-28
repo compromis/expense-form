@@ -231,6 +231,10 @@ const submit = async () => {
   padding: .5rem .75rem;
   margin-top: 1rem;
   font-weight: bold;
+
+  &-info {
+    background: var(--bg-info);
+  }
 }
 
 .input-card .card-content {
