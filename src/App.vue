@@ -6,7 +6,7 @@ import ExpenseForm from './components/ExpenseForm.vue'
 import ExpenseAdvisor from './components/ExpenseAdvisor.vue'
 
 const form = reactive({
-  entity: 'Compromís',
+  entity: 'Compromís-Front Valencià: Eleccions Generals 2026',
   name: '',
   DNI: '',
   address: '',
