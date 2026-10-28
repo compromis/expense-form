@@ -69,13 +69,3 @@ const dinnerLimitSurpassed = computed(() => {
     L'import de sopar supera els 12€/persona/dia
   </div>
 </template>
-
-<style lang="scss" scoped>
-.alert {
-  background: var(--yellow);
-  border-radius: .5rem;
-  padding: .5rem .75rem;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-</style>

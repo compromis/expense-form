@@ -225,6 +225,14 @@ const submit = async () => {
   max-width: 1100px;
 }
 
+.alert {
+  background: var(--yellow);
+  border-radius: .5rem;
+  padding: .5rem .75rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
 .input-card .card-content {
   grid-template-columns: 1.5fr 1fr 1fr;
 }
