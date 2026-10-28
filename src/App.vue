@@ -188,6 +188,10 @@ const submit = async () => {
       </b-input-group>
 
       <expense-form v-model="form.expenses" class="mt-5" />
+      <div class="alert alert-info" role="alert">
+        <font-awesome-icon icon="fa-sharp fa-regular fa-file-circle-info" />
+        No es pagarà cap despesa sense que adjunteu un suport documental: tiquet, factura, bitllet...
+      </div>
       <expense-advisor :expenses="form.expenses" :days="form.days" />
 
       <b-input-group title="Compte on ingresar" class="mt-5">
@@ -233,7 +237,7 @@ const submit = async () => {
   font-weight: bold;
 
   &-info {
-    background: var(--bg-info);
+    background: var(--bs-info);
   }
 }
 

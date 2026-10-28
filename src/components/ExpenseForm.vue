@@ -37,10 +37,6 @@ const totalExpenses = computed(() => expenses.value.reduce((sum, li) => sum + li
 </script>
 
 <template>
-  <div class="alert alert-info" role="alert">
-    <font-awesome-icon icon="fa-sharp fa-regular fa-circle-info" />
-    No es pagarà cap despesa sense que adjunteu un suport documental: tiquet, factura, bitllet...
-  </div>
   <b-input-group title="Despeses">
     <table class="table expenses span-4">
       <thead>
